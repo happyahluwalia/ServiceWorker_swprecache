@@ -10,4 +10,5 @@ node server.js // This is to actually run the application. When user access it w
 Have defined two different cache strategy -- bbc is got from network first
 while cnn is cache first
 
+## Commit 3 set manifest.json with icons for the app to be able to install on homescreen
 //https://houssein.me/progressive-angular-applications

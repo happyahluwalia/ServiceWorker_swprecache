@@ -10,14 +10,14 @@ module.exports = {
   stripPrefix: 'dist/',
   navigateFallback: '/index.html',
   runtimeCaching: [{
-  urlPattern: /\/bbc-news\//,
+  urlPattern: /bbc-news/,
   handler: 'networkFirst',
   name: 'bbc-cache',
   maxEnteries: 10,
   maxAgeSeconds: 300
 },
 {
-  urlPattern: /\/cnn\//,
+  urlPattern: /cnn/,
   handler: 'cacheFirst',
   name: 'cnn-cache',
   maxEnteries: 10,
