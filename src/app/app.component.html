@@ -1,3 +1,9 @@
 <h1>
   {{title}}
 </h1>
+
+<button (click)="changeSource('bbc-news')">BBC</button>
+<button (click)="changeSource('cnn')">CNN</button>
+
+
+<li *ngFor="let article of articles">{{article.description}}</li>
