@@ -1,9 +1,14 @@
-<h1>
-  {{title}}
+<div class="body">
+<h1 class="heading">
+  Different caching strategy based on url
 </h1>
 
-<button (click)="changeSource('bbc-news')">BBC</button>
-<button (click)="changeSource('cnn')">CNN</button>
+  <div class="buttonBody">
+    <button (click)="changeSource('bbc-news')" class="button">BBC</button>
+    <button (click)="changeSource('cnn')" class="button">CNN</button>
+  </div>
 
-
-<li *ngFor="let article of articles">{{article.description}}</li>
+  <div class="news">
+    <li *ngFor="let article of articles" class="list">{{article.description}}</li>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+.body {
+      text-align: center;
+  background: #333;
+  padding: 10px 20px;
+  border: #666 1px solid;
+}
+.heading {
+  font: italic bold 30px Georgia, serif;
+  color: blue;
+}
+
+.buttonBody {
+  padding: 10px;
+}
+
+.button {
+  background-color: violet;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 50%;
+  margin: 10px 10px;
+}
+
+.news {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 10px 10px;
+}
+
+.list {
+
+  padding: 15px 32px;
+
+}
