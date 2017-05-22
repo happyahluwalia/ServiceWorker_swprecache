@@ -28,7 +28,40 @@ module.exports = {
       name: 'cnn-cache',
       maxEnteries: 10,
       maxAgeSeconds: 300
+       }
     }
+  },
+  {
+    urlPattern: /mashable/,
+    handler: 'fastest',
+    options: {
+      cache:{
+      name: 'mashable',
+      maxEnteries: 10,
+      maxAgeSeconds: 300
+      }
+    }
+  },
+  {
+    urlPattern: /fortune/,
+    handler: 'cacheOnly',
+    options: {
+      cache:{
+      name: 'fortune',
+      maxEnteries: 10,
+      maxAgeSeconds: 300
+      }
+    }
+  },
+  {
+    urlPattern: /cnbc/,
+    handler: 'networkOnly',
+    options: {
+      cache:{
+      name: 'cnbc',
+      maxEnteries: 10,
+      maxAgeSeconds: 300
+      }
     }
   }]
 };
