@@ -17,6 +17,5 @@
   "description": "A sample showing various caching strategies for service worker. Each link employs a different strategy.",
   "display" : "standalone",
   "theme_color": "#c5afeb",
-  "orientation" : "potrait",
   "start_url" : "./?utm_source=web_app_manifest"
 }
