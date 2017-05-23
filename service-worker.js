@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["assets/icons/android-chrome-192x192.png","64da5a4808b2f87ae0b586cd5b6ad788"],["assets/icons/android-chrome-512x512.png","04ef6ef91cfeeda196f3db9a076ecad6"],["assets/icons/apple-touch-icon-precomposed.png","4b69c7b8d64998edc30cf4471474bc1f"],["assets/icons/apple-touch-icon.png","be0d780e27355840b44d54c1d7528b87"],["assets/icons/favicon-16x16.png","5eed5ce21008cd26fea4e1aa2b711e24"],["assets/icons/favicon-32x32.png","8322de8efd5fc2b20048b80ef98376d3"],["assets/icons/favicon.ico","f3f70846cad486fc894f0d6145364266"],["assets/icons/manifest.json","59d6638b32e5cda707afa1a49a19f2d8"],["assets/icons/mstile-150x150.png","f7c07b1ec08636a47fcf11a0fb782393"],["assets/icons/safari-pinned-tab.svg","39b1a8cf10302a2e0b6715210e67d675"],["index.html","ea8a344aa5526cfe582a2b0ba0e4c861"],["inline.17df75fc5aa227088541.bundle.js","24bdf471ed164c6bc42dc07c952096c9"],["main.1aa80e5c8afd694f3da0.bundle.js","8adb5ba75c54f92a234b73f7a782f39a"],["polyfills.60187f338ba5b0a175a8.bundle.js","e9c9878491f71e039235b9d3ace5bb0e"],["styles.d41d8cd98f00b204e980.bundle.css","d41d8cd98f00b204e9800998ecf8427e"],["vendor.5381ef5ca17ea08b1649.bundle.js","668ffe100aaf5dd4c621fd44884ea51a"]];
+var precacheConfig = [["assets/icons/android-chrome-192x192.png","64da5a4808b2f87ae0b586cd5b6ad788"],["assets/icons/android-chrome-512x512.png","04ef6ef91cfeeda196f3db9a076ecad6"],["assets/icons/apple-touch-icon-precomposed.png","4b69c7b8d64998edc30cf4471474bc1f"],["assets/icons/apple-touch-icon.png","be0d780e27355840b44d54c1d7528b87"],["assets/icons/favicon-16x16.png","5eed5ce21008cd26fea4e1aa2b711e24"],["assets/icons/favicon-32x32.png","8322de8efd5fc2b20048b80ef98376d3"],["assets/icons/favicon.ico","f3f70846cad486fc894f0d6145364266"],["assets/icons/manifest.json","59d6638b32e5cda707afa1a49a19f2d8"],["assets/icons/mstile-150x150.png","f7c07b1ec08636a47fcf11a0fb782393"],["assets/icons/safari-pinned-tab.svg","39b1a8cf10302a2e0b6715210e67d675"],["index.html","b6b200d044d78045b67517a1e4b8543d"],["inline.7c48171454f7da44c48f.bundle.js","75168f4d936bf3a3dd6a740fc47e447a"],["main.4c8e200a735efacbbac7.bundle.js","c93d5edb66c257b8de7582adb96d5b73"],["polyfills.60187f338ba5b0a175a8.bundle.js","e9c9878491f71e039235b9d3ace5bb0e"],["styles.d41d8cd98f00b204e980.bundle.css","d41d8cd98f00b204e9800998ecf8427e"],["vendor.5381ef5ca17ea08b1649.bundle.js","668ffe100aaf5dd4c621fd44884ea51a"]];
 var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.registration.scope : '');
 
 
@@ -285,8 +285,11 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
-toolbox.router.get(/bbc-news/, toolbox.networkFirst, {});
-toolbox.router.get(/cnn/, toolbox.cacheFirst, {});
+toolbox.router.get(/bbc-news/, toolbox.networkFirst, {"cache":{"name":"bbc-cache","maxEnteries":10,"maxAgeSeconds":300}});
+toolbox.router.get(/cnn/, toolbox.cacheFirst, {"cache":{"name":"cnn-cache","maxEnteries":10,"maxAgeSeconds":300}});
+toolbox.router.get(/mashable/, toolbox.fastest, {"cache":{"name":"mashable","maxEnteries":10,"maxAgeSeconds":300}});
+toolbox.router.get(/fortune/, toolbox.cacheOnly, {"cache":{"name":"fortune","maxEnteries":10,"maxAgeSeconds":300}});
+toolbox.router.get(/cnbc/, toolbox.networkOnly, {"cache":{"name":"cnbc","maxEnteries":10,"maxAgeSeconds":300}});
 
 
 
