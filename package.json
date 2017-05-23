@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "precache": "sw-precache --verbose --config=sw-precache-config.js"
+    "precache": "sw-precache --verbose --config=sw-precache-config.js",
+    "deploy": "ng build --prod --base-href=https://happyahluwalia.github.io/ServiceWorker_swprecache/ && npm run precache && ngh"
   },
   "private": true,
   "dependencies": {
